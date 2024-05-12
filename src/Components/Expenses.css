@@ -1,0 +1,101 @@
+.color-box{
+    width: 26px;
+    height: 8px;
+
+}
+#food{
+    background-color: #A000FF;
+    align-self: center;
+    margin-right: 3px;
+}
+#travel{
+    background-color: #FDE006;
+    align-self: center;
+    margin-right: 3px;
+}
+#entertainment{
+    background-color: #FF9304;
+    align-self: center;
+    margin-right: 3px;
+}
+span.balance{
+    font-weight: 700;
+    color: #9dff5b;
+}
+span.expense{
+    font-weight: 700;
+    color: #F4BB4A;
+}
+button.expense{
+    width: 167.65px;
+    height: 38px;
+    align-self: center;
+    background-image: linear-gradient(to right, #FF9595, #FF4747, #FF3838);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+button.balance{
+    width: 167.65px;
+    height: 38px;
+    align-self: center;
+    background-image: linear-gradient(to right, #B5DC52, #89E148);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.inputs{
+    width: 223px;
+    height: 51px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    background-color: white;
+    opacity: 1;
+    margin: 14px 6px 14px 6px;
+}
+.add-button{
+    width: 223px;
+    height: 51px;
+    background-color: #F4BB4A;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 15px;
+margin-right: 12px;
+color: white
+
+}
+.cancel-button{
+    width: 112px;
+    height: 51px;
+    background-color: #E3E3E3;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 15px;
+margin-right: 12px;
+
+}
+.delete-button{
+width: 37px;
+height: 37px;
+border-radius: 100%;
+background-color: #ff3e3e;
+box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+border: none;
+margin-right: 6px;
+color: white;
+}
+.edit-button{
+    width: 37px;
+    height: 37px;
+    border-radius: 100%;
+    background-color: #F4BB4A;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border: none;
+    transform: translate(0,+10%);
+}
