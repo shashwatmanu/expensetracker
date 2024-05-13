@@ -10,6 +10,7 @@ import { LuPopcorn } from "react-icons/lu";
 import { MdDeleteOutline } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { IconContext } from 'react-icons/lib';
+import { SnackbarProvider, useSnackbar } from 'notistack'
 
 const Transactions = ({transactions, categories, setTransactions, setBalance, setExpenses}) => {
     const [page, setPage] = useState(1);
@@ -17,6 +18,7 @@ const Transactions = ({transactions, categories, setTransactions, setBalance, se
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
     const handleDelete = (e) =>{
         
@@ -41,6 +43,23 @@ const itensCopy = Array.from(transactions)
     setTransactions(itensCopy);
 
 
+
+    }
+
+    const handlePrevPage = () => {
+        if(page===1){
+            enqueueSnackbar(`Can't go back further`);
+            return
+        }
+        setPage(prevPage=>prevPage-1)
+
+    }
+    const handleNextPage = () => {
+        if(page>=(transactions.length)/3){
+            enqueueSnackbar(`No more Transactions to display`);
+            return
+        }
+        setPage(prevPage=>prevPage+1)
 
     }
 
@@ -98,9 +117,9 @@ paginatedVar.push(transactions[i])
         
         <div style={{position:'absolute', display:'flex', left:'40%', bottom:'0'}}>
            
-        <button onClick={()=>setPage(prevPage=>prevPage-1)} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>←</button>
+        <button onClick={handlePrevPage} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>←</button>
         <div style={{backgroundColor:'#43967B', width:'37px', height:'37px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', borderRadius:'5px', margin:'0 20px 0 20px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>{page}</div>
-        <button onClick={()=>setPage(prevPage=>prevPage+1)} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>→</button>
+        <button onClick={handleNextPage} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>→</button>
         </div>
     
     </div>

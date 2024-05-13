@@ -9,16 +9,50 @@ const ModalForm = ({handleClose,balance, expenses, setBalance, setExpenses, setT
     
     const handleBalance = (e) =>{
         e.preventDefault();
+        if(e.target[0].value){
         setBalance(prevBalance => parseFloat(prevBalance)+parseFloat(e.target[0].value))
-        handleClose();
+        handleClose();}
+        else{
+            enqueueSnackbar('Add Balance to proceed');
+        }
     }
-    const handleExpense = (e) =>{
 
+    const validate = (e) => {
+        if(!e.target[0].value){
+            handleClose();
+            enqueueSnackbar('Must add Title to proceed');
+            return false;
+        }
+        if(!e.target[1].value){
+            handleClose();
+            enqueueSnackbar('Must add Value to proceed');
+            return false;
+        }
+        if(e.target[2].value!=="food"&&e.target[2].value!=="entertainment"&&e.target[2].value!=="travel"){
+            handleClose();
+            enqueueSnackbar('Must choose Category to proceed');
+            return false;
+        }
+        if(!e.target[3].value){
+            handleClose();
+            enqueueSnackbar('Must choose Date to proceed');
+            return false;
+        }
         if(e.target[1].value>val){
             handleClose();
             enqueueSnackbar('Not enough balance');
-            
+            return false
         }
+    }
+
+    const handleExpense = (e) =>{
+
+       if(validate(e)===false){
+return
+       }
+
+        
+        
 else{
         let newObj;
         e.preventDefault();
