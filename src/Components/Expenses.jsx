@@ -64,11 +64,11 @@ setCategories(categoriesVar)
   return (
     <>
     <h2 style={{marginLeft:'20px', fontWeight:'700', fontSize:'32px'}}>Expense Tracker</h2>
-    <div style={{display:'flex', justifyContent:'space-evenly',backgroundColor:"#626262", marginLeft:'20px', marginRight:'25px', borderRadius:"10px", alignItems:'center', height:'269px', flexWrap:'flex-shrink'}}>
+    <div style={{display:'flex', justifyContent:'space-around',backgroundColor:"#626262", marginLeft:'20px', marginRight:'25px', borderRadius:"10px", alignItems:'center', flexWrap:'wrap'}}>
         <div><AddSection balance={balance} setBalance={setBalance}/></div>
         <div><AddSection expenses={expenses} setExpenses={setExpenses} setBalance={setBalance} setTransactions={setTransactions} transactions={transactions} val={balance}/></div>
-
-        <ResponsiveContainer width="20%" height="70%">
+<div style={{width:'auto', height:'200px', display:'flex', flexDirection:'column'}}>
+        <ResponsiveContainer>
 
         <PieChart width={400} height={400}>
           <Pie
@@ -88,7 +88,9 @@ setCategories(categoriesVar)
             ))}
           </Pie>
         </PieChart>
-        <div style={{display:'flex', justifyContent:'space-between'}}>
+
+      </ResponsiveContainer>
+      <div style={{display:'flex', justifyContent:'space-between'}}>
             <div style={{display:'flex', marginRight:'9px'}}>
         <div className='color-box' id='food'></div>
         <div style={{fontFamily:'Open Sans'}}> Food</div>
@@ -102,8 +104,7 @@ setCategories(categoriesVar)
         <div style={{fontFamily:'Open Sans'}}> Travel</div>
         </div>
         </div>
-      </ResponsiveContainer>
-      
+      </div>
       
       
     </div>
