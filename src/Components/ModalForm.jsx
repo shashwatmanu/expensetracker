@@ -58,7 +58,15 @@ else{
         e.preventDefault();
         setExpenses(prevExpense => parseFloat(prevExpense)+parseFloat(e.target[1].value))
         setBalance(prevBalance => prevBalance-parseFloat(e.target[1].value))
-        newObj = {'name':e.target[0].value, 'value':parseFloat(e.target[1].value),'category':e.target[2].value,'date':e.target[3].value}
+        let wholeDayVar = new Date (e.target[3].value);
+        let dateVar = wholeDayVar.getDate();
+        let monthNum = wholeDayVar.getMonth();
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      let monthVar = monthNames[monthNum];
+        let yearVar = wholeDayVar.getFullYear();
+        newObj = {'name':e.target[0].value, 'value':parseFloat(e.target[1].value),'category':e.target[2].value,'date': {'day':dateVar, 'month': monthVar, 'year': yearVar}}
         // setObjToAdd(newObj);
 
 

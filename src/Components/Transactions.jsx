@@ -94,7 +94,7 @@ paginatedVar.push(transactions[i])
     <div>
         <div style={{display:'flex',flexDirection:'column',justifyContent:'center', height:'50px'}}>
         <div>{transaction.name}</div>
-        <div>{transaction.date}</div>
+        <div style={{opacity:'50%'}}>{transaction.date.day} {transaction.date.month} {transaction.date.year}</div>
         </div>
         </div>
         </div>
