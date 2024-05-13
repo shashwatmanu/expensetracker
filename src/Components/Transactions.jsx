@@ -35,8 +35,8 @@ const itensCopy = Array.from(transactions)
     // console.log(itensCopy);
     
     
-    setExpenses(prevExp => prevExp - valueToDelete);
-    setBalance(prevBal => prevBal + valueToDelete);
+    setExpenses(prevExp => prevExp - parseFloat(valueToDelete));
+    setBalance(prevBal => prevBal + parseFloat(valueToDelete));
     
     setTransactions(itensCopy);
 
@@ -60,7 +60,7 @@ paginatedVar.push(transactions[i])
     },[page, transactions])
   return (
     <>
-    <div style={{marginLeft:'20px', display:'flex', justifyContent:'space-around'}}>
+    <div style={{marginLeft:'20px', display:'flex', justifyContent:'space-around', flexWrap:'wrap'}}>
         <div style={{width:'738px'}}>
     <h2 style={{fontWeight:'700', fontStyle:'italic', fontSize:'28px'}}>Recent Transactions</h2>
     <div style={{backgroundColor:'#FFFFFF', color:'black', height:'297px', borderRadius:'15px', padding:'24px'}}>

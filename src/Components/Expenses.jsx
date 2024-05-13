@@ -64,7 +64,7 @@ setCategories(categoriesVar)
   return (
     <>
     <h2 style={{marginLeft:'20px', fontWeight:'700', fontSize:'32px'}}>Expense Tracker</h2>
-    <div style={{display:'flex', justifyContent:'space-evenly',backgroundColor:"#626262", marginLeft:'20px', marginRight:'25px', borderRadius:"10px", alignItems:'center', height:'269px'}}>
+    <div style={{display:'flex', justifyContent:'space-evenly',backgroundColor:"#626262", marginLeft:'20px', marginRight:'25px', borderRadius:"10px", alignItems:'center', height:'269px', flexWrap:'flex-shrink'}}>
         <div><AddSection balance={balance} setBalance={setBalance}/></div>
         <div><AddSection expenses={expenses} setExpenses={setExpenses} setBalance={setBalance} setTransactions={setTransactions} transactions={transactions} val={balance}/></div>
 
