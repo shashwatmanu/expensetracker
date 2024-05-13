@@ -63,7 +63,8 @@ paginatedVar.push(transactions[i])
     <div style={{marginLeft:'20px', display:'flex', justifyContent:'space-around', flexWrap:'wrap', marginRight:'20px'}}>
         <div style={{width:'738px'}}>
     <h2 style={{fontWeight:'700', fontStyle:'italic', fontSize:'28px'}}>Recent Transactions</h2>
-    <div style={{backgroundColor:'#FFFFFF', color:'black', height:'297px', borderRadius:'15px', padding:'24px', display:'flex', flexDirection:'column'}}>
+    <div style={{backgroundColor:'#FFFFFF', color:'black', height:'297px', borderRadius:'15px', padding:'24px'}}>
+        <div style={{position:'relative', height:'100%'}}>
     {paginatedTransactions.map((transaction)=> <div><div>
         <div style={{display:'flex',justifyContent:"space-between", height:'60px'}}>
        
@@ -94,13 +95,16 @@ paginatedVar.push(transactions[i])
         </div>
         <div style={{marginBottom:'12px'}}><hr/></div>
         </div>)}
-        <div style={{ display:'flex', alignSelf:'center', marginTop:'24px'}}>
+        
+        <div style={{position:'absolute', display:'flex', left:'40%', bottom:'0'}}>
+           
         <button onClick={()=>setPage(prevPage=>prevPage-1)} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>←</button>
         <div style={{backgroundColor:'#43967B', width:'37px', height:'37px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', borderRadius:'5px', margin:'0 20px 0 20px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>{page}</div>
         <button onClick={()=>setPage(prevPage=>prevPage+1)} style={{borderRadius:'15px', border:'none', width:'37px', boxShadow:'0 4px 4px rgba(0,0,0,0.25)'}}>→</button>
-    </div>
-    </div>
+        </div>
     
+    </div>
+    </div>
     </div>
     <div style={{display:'flex', flexDirection:'column'}}>
     <h2  style={{fontWeight:'700', fontStyle:'italic', fontSize:'28px'}}>Top Expenses</h2>
