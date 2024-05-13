@@ -84,6 +84,7 @@ paginatedVar.push(transactions[i])
     <h2 style={{fontWeight:'700', fontStyle:'italic', fontSize:'28px'}}>Recent Transactions</h2>
     <div style={{backgroundColor:'#FFFFFF', color:'black', height:'297px', borderRadius:'15px', padding:'24px'}}>
         <div style={{position:'relative', height:'100%'}}>
+            {(transactions.length===0)?(<div>Add Expenses to see Transaction list</div>):""}
     {paginatedTransactions.map((transaction)=> <div><div>
         <div style={{display:'flex',justifyContent:"space-between", height:'60px'}}>
        

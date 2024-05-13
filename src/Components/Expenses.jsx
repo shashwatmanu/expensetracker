@@ -68,6 +68,7 @@ setCategories(categoriesVar)
         <div><AddSection balance={balance} setBalance={setBalance}/></div>
         <div><AddSection expenses={expenses} setExpenses={setExpenses} setBalance={setBalance} setTransactions={setTransactions} transactions={transactions} val={balance}/></div>
 <div style={{width:'auto', height:'200px', display:'flex', flexDirection:'column'}}>
+  {(transactions.length===0)?(<div style={{alignSelf:'center', justifyContent:'center'}}>Add Expenses to see PieChart</div>):""}
         <ResponsiveContainer>
 
         <PieChart width={400} height={400}>

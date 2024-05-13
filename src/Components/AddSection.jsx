@@ -9,7 +9,7 @@ const AddSection = ({balance, expenses, setBalance, setExpenses, setTransactions
     const handleClose = () => setOpen(false);
   return (
     <>
-    <div style={{height:'181px',display:'flex',flexDirection:'column', justifyContent:'space-around',backgroundColor:'#9B9B9B', width:'355.41px',borderRadius:'15px', margin:'20px'}}>
+    <div style={{height:'181px',display:'flex',flexDirection:'column', justifyContent:'space-around',backgroundColor:'#9B9B9B', width:'355.41px',borderRadius:'15px', margin:'30px'}}>
             <div style={{alignSelf:'center', fontWeight:'400', fontSize:'30px'}}>{balance?"Wallet Balance":"Expenses"}: <span className={balance?"balance":"expense"}>₹{balance?balance:expenses}</span></div>
             <button onClick={handleOpen} className={balance?"balance":"expense"}>+ Add {balance?"Income":"Expense"}</button>
             <Modal
